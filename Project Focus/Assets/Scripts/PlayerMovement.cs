@@ -7,13 +7,17 @@ public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
 
-    public float speed = 6f; //12
+    public float speed = 3f; //12 //3 Remain //3.5?
     public float gravity = -9.81f;
     public float jumpHeight = 1f; //3
 
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
+
+    public float sprintTime = 7000; //1000 //300
+
+    bool canSprint;
 
 
     Vector3 velocity;
@@ -40,13 +44,22 @@ public class PlayerMovement : MonoBehaviour
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
 
-        if (Input.GetKey("left shift") && isGrounded)
+        if (Input.GetKey("left shift") && canSprint == true)//sprintTime >= 2) //== 3000) //>= 2) //&& isGrounded)
         {
-            speed = 10f; //20
+            speed = 7f; //20
+            sprintTime += -20;
+            if (sprintTime < 0)
+                canSprint = false;
+
         }
         else
         {
-            speed = 6f; //12
+            speed = 3f; //12
+
+            if (sprintTime < 7000)
+                sprintTime += 20; //1
+           else if (sprintTime == 7000)
+                canSprint = true;
         }
         velocity.y += gravity * Time.deltaTime;
 
