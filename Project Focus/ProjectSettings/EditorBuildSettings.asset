@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/GameOver.unity
     guid: 883b34aa407ea3c48b1256fb9b355c74
   - enabled: 1
-    path: Assets/Scenes/Asylum_base.unity
-    guid: a38870109532dc14fac9a4569b6be28f
+    path: Assets/Scenes/HallsStart.unity
+    guid: ec5bf6c419a1e2242ac5476533257500
   m_configObjects: {}

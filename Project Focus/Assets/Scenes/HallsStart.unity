@@ -2132,7 +2132,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOn: 1
+  isView: 1
   lightSource: {fileID: 1591070797}
+  viewSource: {fileID: 2010221271}
 --- !u!114 &1076331432
 MonoBehaviour:
   m_ObjectHideFlags: 0
