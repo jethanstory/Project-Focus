@@ -10,6 +10,8 @@ public class FlashLightMech : MonoBehaviour
     public GameObject lightSource;
     public GameObject viewSource;
 
+    public GameObject torchSound;
+
     // Update is called once per frame
     void Update()
     {
@@ -18,14 +20,18 @@ public class FlashLightMech : MonoBehaviour
         {
             if (isOn == false)
                 {
+                    torchSound.SetActive(false);
                     lightSource.SetActive(true);
                     isOn = true;
+                    torchSound.SetActive(true);
                 }
 
             else if (isOn == true)
             {
+                torchSound.SetActive(false);
                 lightSource.SetActive(false);
                 isOn = false;
+                torchSound.SetActive(true);
             }
             
         } 
@@ -33,12 +39,14 @@ public class FlashLightMech : MonoBehaviour
         {
             if (isView == false)
                 {
+                    
                     viewSource.SetActive(true);
                     isView = true;
                 }
 
             else if (isView == true)
             {
+                
                 viewSource.SetActive(false);
                 isView = false;
             }
